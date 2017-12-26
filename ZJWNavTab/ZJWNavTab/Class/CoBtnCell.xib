@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="4Uu-jq-UNp" customClass="CoBtnCell" customModule="Duo_Er_Wen_Hua" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="87" height="51"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="87" height="51"/>
+                <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="specialcell_nav_btn" translatesAutoresizingMaskIntoConstraints="NO" id="ND5-gj-TsC">
+                        <rect key="frame" x="16" y="14" width="71" height="37"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="sMN-07-74U">
+                        <rect key="frame" x="16" y="14" width="71" height="37"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygh-ab-0Wx">
+                        <rect key="frame" x="0.0" y="8.5" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button" image="channel_edit_delete"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="ND5-gj-TsC" firstAttribute="leading" secondItem="4Uu-jq-UNp" secondAttribute="leadingMargin" id="3jT-0T-Q6T"/>
+                <constraint firstItem="ND5-gj-TsC" firstAttribute="top" secondItem="sMN-07-74U" secondAttribute="top" id="6jN-5b-g62"/>
+                <constraint firstAttribute="bottom" secondItem="ND5-gj-TsC" secondAttribute="bottom" id="7xX-Rk-euH"/>
+                <constraint firstItem="ND5-gj-TsC" firstAttribute="trailing" secondItem="sMN-07-74U" secondAttribute="trailing" id="FwC-QA-lcI"/>
+                <constraint firstAttribute="trailing" secondItem="ND5-gj-TsC" secondAttribute="trailing" id="U6h-56-oLY"/>
+                <constraint firstItem="ND5-gj-TsC" firstAttribute="bottom" secondItem="sMN-07-74U" secondAttribute="bottom" id="YGw-Nx-Hki"/>
+                <constraint firstItem="ND5-gj-TsC" firstAttribute="leading" secondItem="sMN-07-74U" secondAttribute="leading" id="aGc-wu-3fL"/>
+                <constraint firstItem="ND5-gj-TsC" firstAttribute="top" secondItem="4Uu-jq-UNp" secondAttribute="top" constant="14" id="bSk-cL-y51"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="k6I-ET-bKz"/>
+            <size key="customSize" width="165" height="76"/>
+            <connections>
+                <outlet property="deleteBtn" destination="ygh-ab-0Wx" id="dXP-vD-gQw"/>
+                <outlet property="imageview" destination="ND5-gj-TsC" id="Fcc-85-BVB"/>
+                <outlet property="label" destination="sMN-07-74U" id="RBl-lL-CWL"/>
+            </connections>
+            <point key="canvasLocation" x="384.5" y="289.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="channel_edit_delete" width="23" height="23"/>
+        <image name="specialcell_nav_btn" width="70" height="30"/>
+    </resources>
+</document>
