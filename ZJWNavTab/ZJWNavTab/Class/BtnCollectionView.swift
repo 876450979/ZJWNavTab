@@ -30,10 +30,6 @@ class BtnCollectionView: UICollectionView,UICollectionViewDataSource,UICollectio
         self.register(UINib.init(nibName: "CoBtnCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         self.register(NormalHeader.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header")
         
-        //此处给其增加长按手势，用此手势触发cell移动效果
-        longGesture = UILongPressGestureRecognizer.init(target: self, action: #selector(handlelongGesture(gr:)))
-        self.addGestureRecognizer(longGesture!)
-        
          //获取可添加栏目数组
         addlist = FileSave.sharedManager.loadGameData(fileName: "ADDList.txt")
         //点击 排序删除按钮 收到通知  实现方法
@@ -49,7 +45,7 @@ class BtnCollectionView: UICollectionView,UICollectionViewDataSource,UICollectio
         for segment in (superview?.subviews)! {
             if segment.isKind(of: SegmentView.classForCoder()){
                 for scrollview in segment.subviews {
-                    if scrollview.isKind(of: NSClassFromString("WangYiNews.ScrollviewHeaderView")!) {
+                    if scrollview.isKind(of: NSClassFromString("ZJWNavTab.ScrollviewHeaderView")!) {
                     
                         let view  = scrollview as! ScrollviewHeaderView
                         view.explainLabel.text =  "拖动排序"
@@ -73,12 +69,18 @@ class BtnCollectionView: UICollectionView,UICollectionViewDataSource,UICollectio
         let number = info.userInfo!["selectBool"]
         let selectbool = number as! Bool
         if selectbool {
+            //此处给其增加长按手势，用此手势触发cell移动效果
+            longGesture = UILongPressGestureRecognizer.init(target: self, action: #selector(handlelongGesture(gr:)))
+            self.addGestureRecognizer(longGesture!)
+            
             isChangeLocAndDelete = true
             handlelongGesture(gr: longGesture!)
         }else{
             isChangeLocAndDelete = false
             self.removeGestureRecognizer(pan!)
             pan = nil
+            self.removeGestureRecognizer(longGesture!)
+            longGesture = nil
         }
         reloadData()
     }
